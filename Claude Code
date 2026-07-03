@@ -1,0 +1,33 @@
+Claude Code is an agentic coding tool, it reads your code base,edits the files and run your commands and connects to external tools that helps you to ship faster
+How it works -- Takes the prompt , gather the information, take action and verify results in agentic loop, after number of these iterations, it is done with output.
+How to install cloud Claude -  Cloud Claude is installed desktoop app, terminal, VS code or jet brains extension etc
+How to use - Press shift + tab to go to plan mode and enter the prompt 
+Explore--> Plan --> code --> Commit follow these workflow
+Context Management in Claude Code - A context is a memory that claude will took when you enter prompt, when you approached the context, the context will review and remove the 
+previous worked on things, to clear all the context manually use /clear, to get the context details use /context
+Claude Code .md file - 
+CLAUDE.md is a plain-text markdown file that gives Claude Code persistent instructions about your project. Each Claude Code session begins with a fresh context window, and CLAUDE.md files give Claude persistent context that carries knowledge across sessions. Claude reads it automatically at the start of every session — you don't have to re-explain your setup each time.
+What to put in it: facts Claude should hold in every session — build commands, conventions, project layout, and "always do X" rules. If an entry is a multi-step procedure or only matters for one part of the codebase, it's better moved to a skill or a path-scoped rule instead.
+Where it lives (scope hierarchy):
+
+Project root CLAUDE.md — committed to git, shared with the whole team
+CLAUDE.local.md — personal to your machine, gitignored, for individual preferences
+~/.claude/CLAUDE.md — user-level, applies across every project
+
+How to create one: run /init inside a Claude Code session — it scans your project and generates a starter file. Review and trim what it produces; a lot of what /init writes is stuff Claude can already infer by reading your code.
+
+Sub agents - Claude can delegate tasks to subagents that breaks them down and runs multiple tasks in parallel,improving your context
+management. Each subagent operates inn its own context window.
+Skills - Is folder in which we will have code guidelines, project guidelines, color format of the codebase, check styles, code review guidelines etc
+MCP ( Model Context Protocol ) - is a open standard and claude code can connect to external tools and data sources. You can add MCP server using 
+claude mcp add . Http servers for remote services, stdio services for local process that run in your machine, mcp files can be at project, user, local level,
+Hooks- lets you to run the commands at specific points in claude code life cycle, 
+Why use Hooks- You can tell in Claude.Md file to format the file for every edit, but sometimes it misses, using hooks we can tell these instructions and it will make happen everyrime, no exceptions.
+Coomon uses cases include:
+1. Format the files,
+2. Not to change product files
+3. Sending notification when the task finishes.
+How it works - Configured in Settings.json, 
+You can configure them through the /hooks command using claude code, or by editing settings.json directly.
+
+
