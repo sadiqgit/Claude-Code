@@ -18,3 +18,10 @@ Sessions run in environments you configure, work in parallel, and stream tool ca
 Rubrics and separate graders let you define success criteria; Claude iterates until it meets them.
 Memory, MCP servers, custom tools, permissions policies, and multi-agent coordination round out the stateful agent experience.
 You define what done looks like. Claude works until it gets there.
+
+Managed agents are the agent loop, run for you — on Anthropic's infrastructure instead of your server.
+The flow is: create an agent, create an environment, create a session, send events in, and stream events out.
+The agent (model, system prompt, toolset) is reusable across runs; the session is a single run; events are how everything flows.
+Open the event stream before sending your kickoff message — it only delivers events that occur after it opens.
+Watch for three events: agent.message (text), agent.tool_use (tool picks), and session.status_idle (done).
+Reach for managed agents when the loop would run too long, do too much, or need to survive a hiccup. Reach for a manual loop when you want full control.
