@@ -1,0 +1,6 @@
+Context is everything Claude sees on a turn — and it isn't free or infinite. Once the window fills, the request fails.
+Just-in-time context: load what's needed now, let tools pull in the rest. This is the design pattern of the four.
+Server-side compaction: add a context_management key, and the API summarizes old turns automatically when input crosses the trigger threshold.
+Prompt caching: mark stable parts of the request and reuse them across calls at a fraction of the cost.
+The memory tool: Claude reads and writes a memory directory via tool calls; you own the storage backend, so context survives across sessions.
+Four patterns, one goal. Wire them up by hand, or use Claude managed agents, which ship with caching and compaction on by default.
