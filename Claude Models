@@ -1,0 +1,21 @@
+Which Model to choose
+Claude Opus - For Complex problems,slowest and highest cot
+Claude Saunet - Capable ans fast, Suitable for most prodiction work
+Claude Haiku- Less intelligent, fastest and lowest cost, suitable for classification, extraction and routing
+What is an agent
+An agent ia an atomated workflow of claude, running both side of the messages without the human in the middle, An agent recivies a task, picks a tool, 
+and executes code in aloop, untill decides claude is done with task.
+What is agentic looop
+- Let's take you have made a API call to Claude, a sinle API call will return a single response, if you want to automate  the workflow,
+the claude needs to checks the respnse, decide what to do next, and execute code in a loop, untill task is done, that is agentic loop.
+The easisest way to implent the agent loop look like this:
+1. Sends a message to Claude with tools avaialable.
+2. Claude respond with either final answer, or request a tool you defined
+3. Your code executes that tool.
+4. Get the results and evalute it and sends back to claude
+5. Repeats untill get correct result untill the stop reason is end_turn
+
+Extended thinking gives Claude room to reason before it answers, and the reasoning is visible in the response.
+With Opus 4.7, turn it on with thinking: {"type": "adaptive"} — no token budget needed; Claude decides when and how much to think.
+Dial the depth with the effort parameter inside output_config: low, medium, high (default), xhigh, or max.
+Use it for hard, trade-off-heavy problems. Skip it for simple ones — there it just costs latency and tokens.
