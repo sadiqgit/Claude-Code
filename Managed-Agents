@@ -1,0 +1,20 @@
+Claude Managed Agents is a suite of APIs for building and deploying agents at scale. You define agents with specific tools, personas, and capabilities. You configure sandbox environments with the right packages and network controls. Then you fire off sessions from your own application, and Claude does the work inside an isolated container with full file system access, bash execution, and web search.
+
+Across these examples, managed agents gives developers the tools to deliver a fully managed, stateful agent experience built on:
+
+Agents — definitions with specific tools, personas, and capabilities
+Sessions — individual runs you fire off from your own application
+Environments — sandboxes with the right packages and network controls
+Tools — including custom tools on your back end
+MCP — connections to services like Slack and Asana
+Memory — a store the agent reads before starting and writes to when done
+Outcomes — rubrics and graders that define and check what done looks like
+Multi-agent coordination — coordinators delegating to specialists
+
+
+Claude Managed Agents is a suite of APIs for building and deploying agents at scale, hosted on Anthropic's infrastructure.
+It runs the familiar agent loop — reason, call a tool, read the result, repeat — inside an isolated container with file system access, bash execution, and web search
+Sessions run in environments you configure, work in parallel, and stream tool calls back to your app in real time.
+Rubrics and separate graders let you define success criteria; Claude iterates until it meets them.
+Memory, MCP servers, custom tools, permissions policies, and multi-agent coordination round out the stateful agent experience.
+You define what done looks like. Claude works until it gets there.
